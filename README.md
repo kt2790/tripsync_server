@@ -21,7 +21,7 @@
 ## 4. API 문서
 ---
 ### **예시**<br>
-<img src="https://github.com/kt2790/tripsync_server/assets/138543028/f93220ca-d0fe-42c9-9643-8cd68fffd0d0" width="900" height="500" />
+<img src="https://github.com/kt2790/tripsync_server/assets/138543028/f93220ca-d0fe-42c9-9643-8cd68fffd0d0" width="500" height="500" />
 
 [상세 문서](https://kt2790.github.io/tripsync_api/)
 
