@@ -16,8 +16,7 @@
 
 ## 3. ERD
 ---
-![image](https://github.com/kt2790/tripsync_server/assets/138543028/81d23fd9-9c43-4ac2-b513-012f6f299256){: width="50%" height="50%"}
-<img src="https://github.com/kt2790/tripsync_server/assets/138543028/81d23fd9-9c43-4ac2-b513-012f6f299256" width="300" height="300" />
+<img src="https://github.com/kt2790/tripsync_server/assets/138543028/81d23fd9-9c43-4ac2-b513-012f6f299256" width="1024" height="768" />
 
 ## 4. API 문서
 ---
