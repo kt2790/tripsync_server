@@ -3,7 +3,7 @@
 ## 1. 프로젝트 소개
 
 - 여행 계획 작성 및 공유 서비스를 제공하는 TripSync 앱의 백엔드 프로젝트 입니다. <br>
-- [프론트엔드 앱 github](https://github.com/NBCAndroid15/TripSync)
+- [TripSync 안드로이드 프로젝트 github](https://github.com/NBCAndroid15/TripSync)
 
 ## 2. 사용 기술
 
