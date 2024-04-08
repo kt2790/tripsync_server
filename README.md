@@ -43,7 +43,7 @@
 ![2](https://github.com/kt2790/tripsync_server/assets/138543028/7be6b8fe-4f62-48b2-aabc-8eedd3e4256e)
 <br>
 <br>
-- 평균적으로 8초 정도의 응답시간을 소요, 현 상황에서 서비스를 배포한다면 나쁜 사용자 경험을 제공할 가능성이 클 것으로 예상됩니다.
+평균적으로 8초 정도의 응답시간을 소요, 현 상황에서 서비스를 배포한다면 나쁜 사용자 경험을 제공할 가능성이 클 것으로 예상됩니다.
 
 #### 2. 쿼리 최적화를 통한 성능 개선
 
@@ -51,16 +51,15 @@
 
 ![1](https://github.com/kt2790/tripsync_server/assets/138543028/5b1c9029-d7bd-4dae-b121-d46777b09f0e)
 <br> <br>
-
-- 위 그림은 Plan Entity 를 조회할 때, 이와 연관된 PlanGroup Entity 를 조회하는 단건 쿼리가 추가적으로 발생함을 보여주고 있습니다. <br>
+*위 그림은 Plan Entity 를 조회할 때, 이와 연관된 PlanGroup Entity 를 조회하는 단건 쿼리가 추가적으로 발생함을 보여주고 있습니다.* <br>
 만약, 조회한 Plan Entity 의 개수가 100개 라고 가정한다면 연관된 Entity 를 조회하기 위해 100개의 추가적인 단건 쿼리가 발생 할 것 입니다. <br>
 흔히 잘 알려져있는 N + 1 문제에 해당하고, 이러한 문제를 해결하기 위해 fetch join, batch fetch 과 같은 솔루션을 활용 할 수 있습니다. <br>
 
-- fetch join 의 경우 하나의 Entity로 부터 To-Many 관계를 맺고있는 Entity 가 2개 이상 존재할 경우, <br> 
+fetch join 의 경우 하나의 Entity로 부터 To-Many 관계를 맺고있는 Entity 가 2개 이상 존재할 경우, <br> 
 중복된 데이터 발생으로 인한 MultipleBagFetchException 예외가 발생합니다. <br>
 이와 같은 이유로 본 프로젝트에 적용하기엔 제한되는 부분이 있어, batch fetch 방식을 도입하여 최적화를 시도하였습니다. <br>
 
-- batch fetch 방식은 연관된 Entity 조회시 한건씩 단건 쿼리를 실행하는 것이 아니라, 사전에 조회할 개수를 설정하고 <br>
+batch fetch 방식은 연관된 Entity 조회시 한건씩 단건 쿼리를 실행하는 것이 아니라, 사전에 조회할 개수를 설정하고 <br>
 조회 발생시, 정해둔 개수만큼 SQL 에서 제공하는 IN 구문을 활용해 일괄적으로 Entity 를 조회하는 방식입니다. <br>
 이러한 방법으로, 추가적으로 발생하는 N 개의 쿼리를 (N / 조회할 개수) 개의 쿼리 수로 줄일 수 있을 것 입니다. <br>
 
