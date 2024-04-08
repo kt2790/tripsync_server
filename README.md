@@ -49,7 +49,6 @@
 
 첫번째로 생각한 최적화 방안은 조회시 발생하는 쿼리 수를 최소화 시키는 것 입니다. <br>
 
-**기존 쿼리**
 ![1](https://github.com/kt2790/tripsync_server/assets/138543028/5b1c9029-d7bd-4dae-b121-d46777b09f0e)
 <br> <br>
 위 그림은 Plan Entity 를 조회할 때, 이와 연관된 PlanGroup Entity 를 조회하는 단건 쿼리가 추가적으로 발생함을 보여주고 있습니다. <br>
@@ -63,10 +62,14 @@ batch fetch 방식은 연관된 Entity 조회시 한건씩 단건 쿼리를 실�
 이러한 방법으로, 추가적으로 발생하는 N 개의 쿼리를 (N / 조회할 개수) 개의 쿼리 수로 줄일 수 있을 것 입니다. <br>
 
 **batch fetch 방식 적용 후**
+<br>
 ![3](https://github.com/kt2790/tripsync_server/assets/138543028/9e485d02-4c15-49a0-a0be-c20c853de694)
 <br> <br>
-기존의 단건으로 조회하는 쿼리에서, IN 구문을 통해 일괄적으로 조회하는 쿼리로 변경되었음을 확인 할 수 있습니다.
+기존 단건으로 조회하는 쿼리에서, IN 구문을 통해 일괄적으로 조회하는 쿼리로 변경되었음을 확인 할 수 있습니다.
 
+![4](https://github.com/kt2790/tripsync_server/assets/138543028/3492799b-c710-4237-b5cb-d1f387a789ca)
+<br> <br>
+기존 8000ms 의 응답 시간에서 줄어들어 200ms 약 40배 차이의 성능 개선 효과를 볼 수 있었습니다.
 
 
 
