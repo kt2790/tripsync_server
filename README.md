@@ -67,7 +67,7 @@ batch fetch 방식은 연관된 Entity 조회시 한건씩 단건 쿼리를 실�
 <br> <br>
 기존 단건으로 조회하는 쿼리에서, IN 구문을 통해 일괄적으로 조회하는 쿼리로 변경되었음을 확인 할 수 있습니다.
 
-![4](https://github.com/kt2790/tripsync_server/assets/138543028/3492799b-c710-4237-b5cb-d1f387a789ca)
+![4](https://github.com/kt2790/tripsync_server/assets/138543028/7a009125-473a-42cd-b4dc-6e1809462e8e)
 <br> <br>
 기존 8000ms 의 응답 시간에서 줄어들어 200ms 약 40배 차이의 성능 개선 효과를 볼 수 있었습니다.
 
