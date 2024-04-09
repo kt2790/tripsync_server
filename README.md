@@ -25,7 +25,7 @@
 
 테스트 기반으로 API 문서 생성을 자동화 해주는 Spring REST Docs 기술을 활용하였습니다. 
 
-***예시***
+***(예시)***
 <br>
 <img src="https://github.com/kt2790/tripsync_server/assets/138543028/f93220ca-d0fe-42c9-9643-8cd68fffd0d0" width="700" height="700" />
 
