@@ -41,6 +41,7 @@
 #### 1. 어떠한 최적화도 적용되어있지 않은 초기 상황에서의 테스트
 
 ***응답 시간 그래프***
+<br>
 ![2](https://github.com/kt2790/tripsync_server/assets/138543028/7be6b8fe-4f62-48b2-aabc-8eedd3e4256e)
 <br>
 <br>
@@ -51,6 +52,7 @@
 첫번째로 생각한 최적화 방안은 조회시 발생하는 쿼리 수를 최소화 시키는 것 입니다.
 
 ***기존 쿼리***
+<br>
 ![1](https://github.com/kt2790/tripsync_server/assets/138543028/5b1c9029-d7bd-4dae-b121-d46777b09f0e)
 <br> <br>
 위 그림은 Plan Entity 를 조회할 때, 이와 연관된 PlanGroup Entity 를 조회하는 단건 쿼리가 추가적으로 발생함을 보여주고 있습니다. <br>
@@ -70,6 +72,7 @@ batch fetching 방식은 연관된 Entity 조회시 한건씩 단건 쿼리를 �
 기존 단건으로 조회하는 쿼리에서, IN 구문을 통해 일괄적으로 조회하는 쿼리로 변경되었음을 확인 할 수 있습니다.
 
 ***응답 시간 그래프***
+<br>
 ![4](https://github.com/kt2790/tripsync_server/assets/138543028/7a009125-473a-42cd-b4dc-6e1809462e8e)
 <br> <br>
 기존 8000ms 의 응답 시간에서 줄어들어 200ms 약 40배 차이의 성능 개선 효과를 볼 수 있었습니다.
@@ -86,12 +89,14 @@ batch fetching 방식을 통해 쿼리 수를 크게 줄였지만, 사용자가 
 본 프로젝트 에서는 가장 간단한 캐시매니저 구현체인 ConcurrentMapCacheManager 를 활용해서 테스트를 진행하였습니다.
 
 ***캐시 기능 적용***
+<br>
 ![1](https://github.com/kt2790/tripsync_server/assets/138543028/01d2c59a-5dab-45c8-b66e-af92537d9297)
 <br>
 사용자가 작성한 계획 목록을 조회하는 getPlanByUid 메소드에 @Cacheable 어노테이션을 적용하여 캐시 기능을 활성화 및 <br>
 사용자의 uid 를 key, 반환되는 List<PlanDTO> 를 value 로 하여 ConcurrentHashMap 에 저장되는 형태로 구현하였습니다.
 
 ***응답 시간 그래프***
+<br>
 ![2](https://github.com/kt2790/tripsync_server/assets/138543028/6095129a-a7e3-414e-8a62-8f7f285261b3)
 <br>
 이전 평균 응답시간인 200ms 에서 5ms 의 응답시간으로 40배 정도의 성능 향상을 확인할 수 있었습니다.
