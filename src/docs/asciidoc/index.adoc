@@ -1,0 +1,225 @@
+= Tripsync API Document
+:doctype: book
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 2
+:seclinks:
+
+== User API
+
+=== 회원 가입
+
+==== 요청
+
+include::{snippets}/user-controller-test/register200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/user-controller-test/register200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/user-controller-test/register200-test/http-response.adoc[]
+
+==== 응답 필드
+
+include::{snippets}/user-controller-test/register200-test/response-fields.adoc[]
+
+***
+
+=== 로그인
+
+==== 요청
+
+include::{snippets}/user-controller-test/login200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/user-controller-test/login200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/user-controller-test/login200-test/http-response.adoc[]
+
+==== 응답 필드
+
+include::{snippets}/user-controller-test/login200-test/response-fields.adoc[]
+
+***
+
+=== 로그아웃
+
+==== 요청
+
+include::{snippets}/user-controller-test/logout200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/user-controller-test/logout200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/user-controller-test/logout200-test/http-response.adoc[]
+
+***
+
+=== 친구 추가
+
+==== 요청
+
+include::{snippets}/user-controller-test/add-friend200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/user-controller-test/add-friend200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/user-controller-test/add-friend200-test/http-response.adoc[]
+
+***
+
+=== 친구 삭제
+
+==== 요청
+
+include::{snippets}/user-controller-test/delete-friend200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/user-controller-test/delete-friend200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/user-controller-test/delete-friend200-test/http-response.adoc[]
+
+***
+
+== Plan API
+
+=== 계획 생성
+
+==== 요청
+
+include::{snippets}/plan-controller-test/create-plan200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/plan-controller-test/create-plan200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/plan-controller-test/create-plan200-test/http-response.adoc[]
+
+==== 응답 필드
+
+include::{snippets}/plan-controller-test/create-plan200-test/response-fields.adoc[]
+
+***
+
+=== 계획 수정
+
+==== 요청
+
+include::{snippets}/plan-controller-test/update-plan200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/plan-controller-test/update-plan200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/plan-controller-test/update-plan200-test/http-response.adoc[]
+
+***
+
+=== 계획 삭제
+
+==== 요청
+
+include::{snippets}/plan-controller-test/delete-plan200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/plan-controller-test/delete-plan200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/plan-controller-test/delete-plan200-test/http-response.adoc[]
+
+***
+
+=== 계획 조회
+
+==== 요청
+
+include::{snippets}/plan-controller-test/get-plan200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/plan-controller-test/get-plan200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/plan-controller-test/get-plan200-test/http-response.adoc[]
+
+==== 응답 필드
+
+include::{snippets}/plan-controller-test/get-plan200-test/response-fields.adoc[]
+
+***
+
+== Bookmark API
+
+=== 북마크 생성
+
+==== 요청
+
+include::{snippets}/bookmark-controller-test/create-bookmark200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/bookmark-controller-test/create-bookmark200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/bookmark-controller-test/create-bookmark200-test/http-response.adoc[]
+
+***
+
+=== 북마크 삭제
+
+==== 요청
+
+include::{snippets}/bookmark-controller-test/delete-bookmark200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/bookmark-controller-test/delete-bookmark200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/bookmark-controller-test/delete-bookmark200-test/http-response.adoc[]
+
+***
+
+=== 북마크 조회
+
+==== 요청
+
+include::{snippets}/bookmark-controller-test/get-bookmark200-test/http-request.adoc[]
+
+==== 요청 필드
+
+include::{snippets}/bookmark-controller-test/get-bookmark200-test/request-fields.adoc[]
+
+==== 응답
+
+include::{snippets}/bookmark-controller-test/get-bookmark200-test/http-response.adoc[]
+
+==== 응답 필드
+
+include::{snippets}/bookmark-controller-test/get-bookmark200-test/response-fields.adoc[]
+
+***
+
