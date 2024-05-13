@@ -28,7 +28,7 @@ jobs:
 
           touch ./application.yml
           
-          echo "${{ secrets.PROPERTIES }}" >> ./application-database.yml
+          echo "${{ secrets.PROPERTIES }}" >> ./application.yml
         shell: bash
 
 
