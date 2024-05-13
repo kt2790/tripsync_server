@@ -16,6 +16,8 @@
 - Junit5
 - Mockito
 - Apache JMeter
+- AWS EC2
+- Docker
 
 ## 3. ERD
 
