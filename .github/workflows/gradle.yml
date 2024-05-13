@@ -39,6 +39,11 @@ jobs:
           ./gradlew build
           
 #         ./gradlew bootJar
+      - name: reporting test
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: '**/build/test-results/test/TEST-*.xml'
 
       - name: web docker build and push
         run: |
