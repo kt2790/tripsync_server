@@ -53,7 +53,10 @@ jobs:
           username: ubuntu
           key: ${{ secrets.KEY }}
           script: |
-            sudo docker rm -f $(sudo docker ps -a)
+            sudo docker stop tripsyncapp
+            sudo docker stop tripsyncdb
+            sudo docker rm tripsyncapp
+            sudo docker rm tripsyncdb
             cd ~
             sudo docker compose up -d
             sudo docker image prune -f
