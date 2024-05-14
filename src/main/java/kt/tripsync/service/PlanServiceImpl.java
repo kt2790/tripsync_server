@@ -19,14 +19,14 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-@CacheConfig(cacheNames = "plan")
+//@CacheConfig(cacheNames = "plan")
 public class PlanServiceImpl implements PlanService {
 
     private final PlanRepository planRepository;
 
     @Override
     @Transactional
-    @CacheEvict(key = "#userId")
+    //@CacheEvict(key = "#userId")
     public Long createPlan(Long userId, PlanDTO planDTO) {
         return planRepository.createPlan(userId,
                 planDTO.getPlanEntity(),
@@ -37,7 +37,7 @@ public class PlanServiceImpl implements PlanService {
 
     @Override
     @Transactional
-    @CacheEvict(key = "#userId")
+    //@CacheEvict(key = "#userId")
     public Long updatePlan(Long userId, PlanDTO planDTO) {
         return planRepository.updatePlan(userId,
                 planDTO.getPlanId(),
@@ -49,13 +49,13 @@ public class PlanServiceImpl implements PlanService {
 
     @Override
     @Transactional
-    @CacheEvict(key = "#userId")
+    //@CacheEvict(key = "#userId")
     public void deletePlan(Long userId, Long planId) {
         planRepository.deletePlan(planId);
     }
 
     @Override
-    @Cacheable(key = "#id")
+    //@Cacheable(key = "#id")
     public List<PlanDTO> getPlanByUid(Long id) {
         return planRepository.getPlanByUid(id)
                 .stream()
